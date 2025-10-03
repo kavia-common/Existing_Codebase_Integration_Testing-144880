@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "start:dev": "NODE_ENV=development node src/server.js"
+    "start:dev": "NODE_ENV=development node src/server.js",
+    "postinstall": "node -e \"console.log('Postinstall: dependencies installed successfully')\"",
+    "health": "node -e \"require('http').get('http://localhost:' + (process.env.PORT || 3001) + '/health', res=>{console.log('HEALTH', res.statusCode); process.exit(res.statusCode===200?0:1)}).on('error',()=>process.exit(1))\""
   },
   "keywords": [
     "express",

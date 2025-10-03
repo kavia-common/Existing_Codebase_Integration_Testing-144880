@@ -4,6 +4,11 @@ Backend startup (Express)
 - This repository now includes a minimal Express backend to ensure container startup for integration testing.
 - The server listens on PORT from environment (defaults to 3001).
 
+Requirements
+- Node.js 18.x LTS or newer (see .nvmrc)
+- npm 9+ recommended
+- Network access to npm registry (https://registry.npmjs.org)
+
 Getting started
 1) Install dependencies:
    npm install
@@ -23,3 +28,4 @@ Notes
 - Uses dotenv for environment configuration. Avoid hardcoding secrets.
 - Logs are printed to stdout using morgan.
 - CORS enabled for broad testing compatibility.
+- If dependency installation fails due to engine checks or peer dependencies, see .npmrc which relaxes strict checks for CI stability.
